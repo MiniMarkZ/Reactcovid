@@ -1,15 +1,22 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './App.css';
-import Images from './Images';
-import Input from './Input';
 import Navbar from './navbar';
+import Treed from './tree/index';
 
 function Menu() {
+  
   return (
-    <div>
-        <Navbar />
-        <Input />
-        <Images />
+    <div><Navbar />
+    <div class="container">
+      
+      <div class="nav">
+      <Treed />
+      </div>
+
+      <div class="main">
+      content
+      </div>
+    </div>
     </div>
   );
 }

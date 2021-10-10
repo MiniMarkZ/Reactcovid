@@ -1,3 +1,4 @@
+
 *{
   box-sizing: border-box;
 }
@@ -6,44 +7,31 @@ body{
   background: white;
   color: black;
 }
-.navbar{
-  border-bottom: 1px solid sandybrown;
-  height: 70px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: sandybrown;
+.nav {
+  background: sandybrown;
   color: white;
+  text-align: center;
+  width: 200px;
+  box-flex:  0;
+  height: 100%;  
 }
 
-.Input{
-  border: 1px solid white;
-  border-radius: 4px;
-  width: 576px;
-  margin: 20px ;
-  background-color: white;
+.container {
+  height: 100%;
+  display: -ms-flexbox;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-box;
+  display: box;
+  box-orient: horizontal;
 }
-.input_header{
-  background-color: white;
-  border: 1px solid white;
-  border-radius: 2px 2px 0 0;
-  margin: 0;
-  padding: 2px;
+.main {
+  background: aliceblue;
+  height: 150%;
+  width: 100%;
+ box-flex: 1;  
 }
-.input_field{
-  width: 50%;
-  height: 25px;
-  padding: 10px;
-  font-size: 20px;
-  background-color: white; 
-}
-.Images{
-  border: 1px solid white;
-  border-radius: 4px;
-  width:  800px;
-  margin: 10px auto;
-  
-}
+
 .filename{
   color: white;
   display: flex;
@@ -52,17 +40,13 @@ body{
   border-radius: 4px;
   background-color: sandybrown;
 }
-.welcome{
-  background-color: aliceblue;
-  color: black;
+
+.navbar{
+  border-bottom: 1px solid sandybrown;
+  height: 70px;
   display: flex;
   justify-content: center;
-}
-.Home{
-  border: 1px solid white;
-  color: sandybrown;
-  display: flex;
-  justify-content: center;
-  font-size: 50px;
-  
+  align-items: center;
+  background-color: sandybrown;
+  color: white;
 }
