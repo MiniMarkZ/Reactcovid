@@ -1,8 +1,8 @@
 import React from "react";
 function Navbar(){
-    return (<header className="navbar"><h2>
+    return (<header className="navbar" >
         COVID-19 Detection
-        </h2></header>
+        </header>
     );
 }
 export default Navbar;

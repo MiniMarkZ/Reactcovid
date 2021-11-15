@@ -1,20 +1,13 @@
 import React, { useState } from 'react';
-import './App.css';
-import Navbar from './navbar';
-import Treed from './tree/index';
+import './menu.css';
+import Treev2 from './tree/index2';
 
 function Menu() {
-  
   return (
-    <div><Navbar />
-    <div class="container">
-      
-      <div class="nav">
-      <Treed />
-      </div>
-
-      <div class="main">
-      content
+    <div>
+    <div class="container" id="con">
+      <div class="sidebar" >
+      <Treev2 />
       </div>
     </div>
     </div>

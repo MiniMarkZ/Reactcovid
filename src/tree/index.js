@@ -1,76 +1,56 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
+import React, { Component } from 'react';
 import 'antd/dist/antd.css';
 import { Tree } from 'antd';
+import { withRouter } from "react-router-dom";
+import axios from 'axios';
 const { DirectoryTree } = Tree;
-const treeData = [
-  {
-    title: 'test',
-    key: '0-0',
-    children: [
-      {
-        title: 'leaf 0-0', 
-        key: '0-0-0',
-        isLeaf: true,
-      },
-      {
-        title: 'leaf 0-1',
-        key: '0-0-1',
-        isLeaf: true,
-      },
-    ],
-  },
-  {
-    title: 'train',
-    key: '0-1',
-    children: [
-      {
-        title: 'leaf 1-0',
-        key: '0-1-0',
-        isLeaf: true,
-      },
-      {
-        title: 'leaf 1-1',
-        key: '0-1-1',
-        isLeaf: true,
-      },
-    ],
-  },
-  {
-    title : 'sample_submission',
-    key : '0-2',
-    isLeaf : true ,
-  },
-  {
-    title : 'train_image_level',
-    key : '0-3',
-    isLeaf : true ,
-  },
-  {
-    title : 'train_study_level',
-    key : '0-4',
-    isLeaf : true ,
-  }
-];
+const http = require('http');
 
-const Treed = () => {
-  const onSelect = (keys, info) => {
+class Treed extends Component {
+  constructor(props){
+    super(props);
+    this.state = {
+      Data: null,
+    }
+  }
+
+  async componentDidMount(){
+    await axios.get("http://localhost:5000/test")
+    .then((rawdata)=>{
+      this.setState({Data: rawdata.data}) ; 
+    })
+    .catch((error)=>{
+      console.log(error)
+    }) ;
+    
+  }
+  onSelect = (keys, info) => {
+    if(info.node.isLeaf){
+      console.log(info.node.path);
+      this.props.history.push('');
+      this.props.history.push(`${info.node.path}`);
+    }
     console.log('Trigger Select', keys, info);
   };
 
-  const onExpand = () => {
+  onExpand = () => {
     console.log('Trigger Expand');
   };
+  
 
-  return (
-    <DirectoryTree
+  render(){
+    return (
+    <>
+    {this.state.Data !== null &&<DirectoryTree
       multiple
-      defaultExpandAll
-      onSelect={onSelect}
-      onExpand={onExpand}
-      treeData={treeData}
-    />
+      defaultExpandParent
+      onSelect={this.onSelect}
+      onExpand={this.onExpand}
+      treeData={this.state.Data}
+    />}
+    </>
   );
 };
-
-export default Treed ;
+};
+const Treee = withRouter(Treed);
+export default Treee ;

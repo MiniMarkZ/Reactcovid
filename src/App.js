@@ -1,22 +1,33 @@
 import React from 'react';
 import './App.css';
 import Menu from './Menu';
-import {Route , Link} from 'react-router-dom';
-import Sample from './readdata/Sample';
-import Test from './readdata/Test';
-import Train from './readdata/Train';
-import Trainimage from './readdata/Trainimage';
-import Trainstudy from './readdata/Trainstudy';
+import {Route , Link ,Switch} from 'react-router-dom';
+import Navbar from './navbar';
+import Csvsample from './csv/Csvsample';
+import Csvtrainimage from './csv/Csvtrainimage';
+import trainstudy from './csv/trainstudy';
+import DcmViewer from './compronents/dcmfile';
+import home from './home';
+import Loading from './loading';
+
+
 function App() {
   return (
     <div className="App">
-      <Route exact path="" component={Menu} />
-      <Route exact path="/Sample" component={Sample} />
-      <Route exact path="/Test" component={Test} /> 
-      <Route exact path="/Train" component={Train} /> 
-      <Route exact path="/Trainstudy" component={Trainstudy} />  
-      <Route exact path="/Trainimage" component={Trainimage} />      
-         
+      <Navbar />
+      <section style={{display:"flex"}}>
+        <Menu />
+        <Switch>
+          <Route exact path="/" component={home} />
+          <Route path="/undefined" component={Loading} />
+          <Route path="/projectdata/csv/sample_submission.csv" component={Csvsample} />
+          <Route path="/projectdata/csv/train_image_level.csv" component={Csvtrainimage} />
+          <Route path="/projectdata/csv/train_study_level.csv" component={trainstudy} />
+            <Route path="/projectdata/*" exact>
+             <DcmViewer />
+            </Route>      
+        </Switch>
+      </section> 
     </div>
   );
 }

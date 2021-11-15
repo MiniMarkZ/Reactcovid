@@ -5,28 +5,9 @@
 body{
   margin: 0;
   background: white;
-  color: black;
-}
-.nav {
-  background: sandybrown;
-  color: white;
-  text-align: center;
-  width: 200px;
-  box-flex:  0;
-  height: 100%;  
-}
-
-.container {
-  height: 100%;
-  display: -ms-flexbox;
-  display: -webkit-box;
-  display: -moz-box;
-  display: -ms-box;
-  display: box;
-  box-orient: horizontal;
 }
 .main {
-  background: aliceblue;
+
   height: 150%;
   width: 100%;
  box-flex: 1;  
@@ -48,5 +29,9 @@ body{
   justify-content: center;
   align-items: center;
   background-color: sandybrown;
+  font-size: 40px;
+
   color: white;
 }
+
+@import '~antd/dist/antd.css';

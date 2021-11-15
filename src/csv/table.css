@@ -1,0 +1,39 @@
+
+  table {
+    border-collapse: collapse;
+  }
+  
+  th,
+  td {
+    border: 1px solid #ffffff;
+    text-align: left;
+    padding: 8px;
+    font-size: 13px;
+  }
+  
+  th {
+    background-color: sandybrown;
+    color: white;
+  }
+  
+  td {
+    background-color: wheat;
+  }
+  
+  form {
+    display: flex;
+    gap: 5px;
+  }
+  
+  form td:last-child {
+    display: flex;
+    justify-content: space-evenly;
+  }
+  
+  form * {
+    font-size: 16px;
+  }
+  .main{
+    padding: 20px;
+    width: 75%; 
+  }

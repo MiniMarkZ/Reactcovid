@@ -1,0 +1,17 @@
+.containerr {
+    height: 100vh;
+    overflow-y: auto;
+    overflow-x: auto;
+    max-width: 50vw;
+  }
+  .container-sample{
+    margin-left: auto;
+    margin-right:  auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  #conchart::-webkit-scrollbar { width: 2 !important } 
+  
+ 
